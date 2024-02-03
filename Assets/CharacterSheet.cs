@@ -51,7 +51,7 @@ public class CharacterSheet : MonoBehaviour
         else Debug.Log(characterName + "'s Hit Modifier: " + hitModifier);
 
 
-        // Determine enemy armor class
+        // Determine enemy armor class (random between 10-20)
         enemyArmorClass = Random.Range(10, 21);
 
         // Display ememy armor class
@@ -59,6 +59,7 @@ public class CharacterSheet : MonoBehaviour
 
         // Roll a D20 (random betweem 1-20)
         diceRoll = Random.Range(1, 21);
+
         // Display roll
         Debug.Log(characterName + " rolled a " + diceRoll);
 
