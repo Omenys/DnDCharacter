@@ -27,6 +27,25 @@ public class CharacterSheet : MonoBehaviour
         Debug.Log("Using a finesse weapon?: " + usingFinesseWeapon);
         Debug.Log("Stength: " + strengthModifier);
         Debug.Log("Dexterity: " + dexterityModifier);
+
+
+        // Determine character hit modifier
+        if (usingFinesseWeapon)
+        {
+            // If using finesse and str is higher stat
+            if (strengthModifier > dexterityModifier)
+            {
+                hitModifier = strengthModifier + proficiency;
+            }
+            // If using finesse and dex is higher stat
+            else hitModifier = dexterityModifier + proficiency;
+        }
+        // If not using finesse default
+        else hitModifier = strengthModifier + proficiency;
+        
+       
+
+        // Determine enemy stats
     }
 
     // Update is called once per frame
