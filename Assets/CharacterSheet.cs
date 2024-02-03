@@ -55,12 +55,12 @@ public class CharacterSheet : MonoBehaviour
         enemyArmorClass = Random.Range(10, 21);
 
         // Display ememy armor class
-        Debug.Log("Enemy armor class is " + enemyArmorClass);
+        Debug.Log("Enemy Armor Class: " + enemyArmorClass);
 
         // Roll a D20 (random betweem 1-20)
         diceRoll = Random.Range(1, 21);
         // Display roll
-        Debug.Log(characterName + "rolled a " + diceRoll);
+        Debug.Log(characterName + " rolled a " + diceRoll);
 
         // Add dice roll to hit modifier
         attackRoll = diceRoll + hitModifier;
@@ -68,9 +68,9 @@ public class CharacterSheet : MonoBehaviour
         // Determine if character hits enemy
         if (attackRoll >= enemyArmorClass)
         {
-            Debug.Log(characterName + "successfully landed a hit!");
+            Debug.Log(characterName + " successfully landed a hit!");
         }
-        else Debug.Log(characterName + "missed!");
+        else Debug.Log(characterName + " missed!");
 
     }
 
