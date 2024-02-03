@@ -322,8 +322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801476ade1b06e149b12a3f9bac7cbf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Tav
-  proficiency: 5
+  characterName: 
+  proficiency: 0
   usingFinesseWeapon: 1
-  strengthModifier: -1
-  dexterityModifier: 3
+  strengthModifier: 5
+  dexterityModifier: 5
