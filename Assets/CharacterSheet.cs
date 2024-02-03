@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +16,6 @@ public class CharacterSheet : MonoBehaviour
     private int hitModifier = 0;
     private int enemyArmorClass = 0;
     private int attackRoll = 0;
-    private bool isHit = false;
     private int diceRoll = 1;
 
     // Start is called before the first frame update
@@ -54,13 +52,13 @@ public class CharacterSheet : MonoBehaviour
 
 
         // Determine enemy armor class
-        enemyArmorClass = Random.range(10, 21);
+        enemyArmorClass = Random.Range(10, 21);
 
         // Display ememy armor class
         Debug.Log("Enemy armor class is " + enemyArmorClass);
 
         // Roll a D20 (random betweem 1-20)
-        diceRoll = Random.range(1, 21);
+        diceRoll = Random.Range(1, 21);
         // Display roll
         Debug.Log(characterName + "rolled a " + diceRoll);
 
