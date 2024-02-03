@@ -15,7 +15,7 @@ public class CharacterSheet : MonoBehaviour
 
     // Variables private
     private int hitModifier = 0;
-    private int armorClass = 0;
+    private int enemyArmorClass = 0;
     private bool isHit = false;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class CharacterSheet : MonoBehaviour
         Debug.Log("Character Name: " + characterName);
         Debug.Log("Proficiency: " + proficiency);
         Debug.Log("Using a finesse weapon?: " + usingFinesseWeapon);
-        Debug.Log("Stength: " + strengthModifier);
+        Debug.Log("Strength: " + strengthModifier);
         Debug.Log("Dexterity: " + dexterityModifier);
 
 
@@ -42,10 +42,18 @@ public class CharacterSheet : MonoBehaviour
         }
         // If not using finesse default
         else hitModifier = strengthModifier + proficiency;
-        
-       
+
+        // Display hit modifier
+        if (hitModifier > 0)
+        {
+            Debug.Log(characterName + "'s Hit Modifier: +" + hitModifier);
+        }
+        else Debug.Log(characterName + "'s Hit Modifier: " + hitModifier);
+
 
         // Determine enemy stats
+
+
     }
 
     // Update is called once per frame
