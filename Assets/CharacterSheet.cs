@@ -16,17 +16,19 @@ public class CharacterSheet : MonoBehaviour
     // Variables private
     private int hitModifier = 0;
     private int enemyArmorClass = 0;
+    private int attackRoll = 0;
     private bool isHit = false;
+    private int diceRoll = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         // Display on console
-        Debug.Log("Character Name: " + characterName);
-        Debug.Log("Proficiency: " + proficiency);
-        Debug.Log("Using a finesse weapon?: " + usingFinesseWeapon);
-        Debug.Log("Strength: " + strengthModifier);
-        Debug.Log("Dexterity: " + dexterityModifier);
+        //Debug.Log("Character Name: " + characterName);
+        //Debug.Log("Proficiency: " + proficiency);
+        //Debug.Log("Using a finesse weapon?: " + usingFinesseWeapon);
+        //Debug.Log("Strength: " + strengthModifier);
+        //Debug.Log("Dexterity: " + dexterityModifier);
 
 
         // Determine character hit modifier
@@ -51,8 +53,26 @@ public class CharacterSheet : MonoBehaviour
         else Debug.Log(characterName + "'s Hit Modifier: " + hitModifier);
 
 
-        // Determine enemy stats
+        // Determine enemy armor class
+        enemyArmorClass = Random.range(10, 21);
 
+        // Display ememy armor class
+        Debug.Log("Enemy armor class is " + enemyArmorClass);
+
+        // Roll a D20 (random betweem 1-20)
+        diceRoll = Random.range(1, 21);
+        // Display roll
+        Debug.Log(characterName + "rolled a " + diceRoll);
+
+        // Add dice roll to hit modifier
+        attackRoll = diceRoll + hitModifier;
+
+        // Determine if character hits enemy
+        if (attackRoll >= enemyArmorClass)
+        {
+            Debug.Log(characterName + "successfully landed a hit!");
+        }
+        else Debug.Log(characterName + "missed!");
 
     }
 
